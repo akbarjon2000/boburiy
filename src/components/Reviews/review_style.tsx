@@ -20,7 +20,7 @@ export const Container = styled.div`
     }
     .feeback-con{
         width:50%;
-        min-width:400px;
+        min-width:350px;
         max-width:600px;
         margin:0 auto;
         margin-top:30px;
@@ -96,20 +96,20 @@ export const Container = styled.div`
         margin:0 auto;
         width:100%;
         max-width:900px;
-        min-width:430px;
+        
         height:fit-content;
         gap:20px;
         margin:0 auto;
         margin-top:30px;
         flex-wrap:wrap;
-        justify-content:start;
+        justify-content:center;
         align-items:flex-start;
 
     }
     .review-card{
         width:45%;
         max-width:450px;
-        min-width:400px;
+        min-width:350px;
         height:fit-content;
         /* border:1px solid; */
         border-radius:10px;
