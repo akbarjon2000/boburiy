@@ -50,7 +50,7 @@ const SignUp = () => {
             <img src="./signupmeal2.png" className='meal'  />
             <div className='sign-info'>
                 <img src="sign_up2.png" className='logo_img' />
-                <h1 className='welcome'>Welcome to Tashkent Restaurant!</h1>
+                <h1 className='welcome'>Welcome to Boburiy Restaurant!</h1>
                 <p>Already signed up? <Link to="/sign-in">log in</Link></p>
                 <form className='inputs' onSubmit={handleSubmit}>
                     <input value={form.first_name} onChange={handleChange} name='first_name' className='input' placeholder='First Name' required />

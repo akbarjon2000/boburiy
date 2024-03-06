@@ -47,7 +47,7 @@ function SignIn() {
             <button onClick={() => setModal("none")} style={{width:"100px", height:"40px", background:"lightgreen", border:"none", borderRadius:"10px"}}>Confirm</button>
         </Modal>
         <img className='logo' src='./logo.png' />
-        <p className='welcome'>Discover the Flavors of Tashkent with Us!</p>
+        <p className='welcome'>Discover the Flavors of Boburiy with Us!</p>
         <form className='form' onSubmit={handleSubmit}>
             <p className='sign_up_link'>Don't you have an account? <Link to="/sign-up">Sign Up</Link></p>
             <input onChange={handleChange} type='email' placeholder='email' className='input' name='email'/>
