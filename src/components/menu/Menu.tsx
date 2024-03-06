@@ -43,7 +43,7 @@ const Menu = () => {
             <div onClick={() => handleType(1)} className='type_item'>{t("main_dishes")}</div>
             <div onClick={() => handleType(2)} className='type_item'>{t("Drinks")}</div>
             <div onClick={() => handleType(3)} className='type_item'>{t("Salads")}</div>
-            <div onClick={() => handleType(4)} className='type_item'>{t("Desserts")}</div>
+            {/* <div onClick={() => handleType(4)} className='type_item'>{t("Desserts")}</div> */}
         </div>
         <div className='menu'>
             {

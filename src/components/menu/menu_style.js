@@ -58,7 +58,8 @@ export const Container = styled.div`
     .card{
         text-decoration:none;
         width: 260px;
-        height: 309px;
+        /* height: 359px; */
+        height:fit-content;
         border:2px solid #fff;
         /* border-top-left-radius:45px;
         border-bottom-right-radius:45px;
@@ -83,7 +84,7 @@ export const Container = styled.div`
     }
     .dish_img{
         width: 100%;
-        height: 150px;
+        height: 200px;
         /* border-radius:45px; */
         border-top-left-radius:45px;
         border-top-right-radius:45px;

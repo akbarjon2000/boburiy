@@ -44,17 +44,17 @@ useEffect(() => {
                   <Navbar/>
                   <Routes>
 
-                    <Route index path='/' element={<Landing/>}/>
+                    {/* <Route index path='/' element={<Landing/>}/> */}
                     <Route path='/menu' element={<Menu/>} />
-                    <Route path='/dish' element={<Dish/>} />
-                    <Route path='/cart' element={<Cart/>}/>
+                    {/* <Route path='/dish' element={<Dish/>} /> */}
+                    {/* <Route path='/cart' element={<Cart/>}/> */}
                     <Route path='/profile' element={<Profile/>}/>
-                    <Route path='/table' element={<Table/>}/>
+                    {/* <Route path='/table' element={<Table/>}/> */}
                     <Route path='/wishlist' element={<Wishlist/>}/>
                     <Route path='/reviews' element={<Reviews/>}/>
                     <Route path='/about' element={<About/>}/>
-                    <Route path='/secret-admin' element={<Admin/>}/>
-                    <Route index path='*' element={<Landing/>} />
+                    {/* <Route path='/secret-admin' element={<Admin/>}/> */}
+                    <Route index path='*' element={<Menu/>} />
 
                     
                   </Routes>

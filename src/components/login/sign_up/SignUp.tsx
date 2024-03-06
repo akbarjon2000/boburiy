@@ -2,7 +2,9 @@ import React, { useContext, useState } from 'react'
 import { Container } from './sign_up_style'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-import { LoginContext } from '../../../context/loginContext'
+import { LoginContext } from '../../../context/loginContext';
+import { LoadingContext } from '../../../context/loadingContext';
+import Modal from '../../../generics/Modal';
 type FormType = {
     first_name:string,
     last_name:string,
@@ -12,15 +14,23 @@ type FormType = {
 }
 const SignUp = () => {
     const [form, setForm] = useState({} as FormType);
+    const [modal, setModal] = useState("none");
+
     const {setLogin} = useContext(LoginContext);
+    const {setLoading} = useContext(LoadingContext);
+    
     const handleSubmit = async (e:any) => {
         e.preventDefault();
         try {
+            setLoading(true);
             const res = await axios.post("https://tashkent-server-3.onrender.com/sign-up", {form});
             console.log(res);
             setLogin(true);
+            setLoading(false);
 
         } catch (error) {
+            setLoading(false)
+            setModal("none")
             console.log("SIGNUP ERROR", error);
         }
     }
@@ -31,6 +41,11 @@ const SignUp = () => {
     }
   return (
     <Container>
+        <Modal width="300px" height='200px' display={modal} style={{}}>
+            <h1 style={{color:"red"}}>Error</h1>
+            <p style={{color:"orange"}}>Some error occured in the server</p>
+            <button onClick={() => setModal("none")} style={{width:"100px", height:"40px", background:"lightgreen", border:"none", borderRadius:"10px"}}>Confirm</button>
+        </Modal>
         <div className='sec-container'>
             <img src="./signupmeal2.png" className='meal'  />
             <div className='sign-info'>

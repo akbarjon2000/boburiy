@@ -50,7 +50,7 @@ const Navbar = () => {
         </Modal>
         <Link to="/" className='logo'>
             <img src='./logo.png'/>
-            <h2 style={{ width:"fit-content", margin:0}}>Tashkent</h2>
+            <h2 style={{ width:"fit-content", margin:0}}>Boburiy</h2>
         </Link>
         <div className='nav'>
             <Link onClick={() => {setNavDisplay(false);}} className='link' to="/menu">{navdisplay ? <IoFastFoodSharp className='link_icon'/>:null}{t("menu")}</Link>
@@ -58,11 +58,11 @@ const Navbar = () => {
             <Link onClick={() => {setNavDisplay(false);}} className='link' to="/about">{navdisplay ? <FcAbout className='link_icon'/>:null}{t("about")}</Link>
             {/* <Link className='link' to="/contact">{navdisplay ? <FcBusinessContact className='link_icon'/>:null}{t("Contact")}</Link> */}
         </div>
-        <div onClick={() => navigate("/table")} className='book_bnt'>{t("book")}</div>
+        {/* <div onClick={() => navigate("/table")} className='book_bnt'>{t("book")}</div> */}
         {navdisplay?
         <div className='col info_div_col' style={{gap:"20px"}}>
             <Link onClick={() => {setNavDisplay(false);}} className='link' to="/profile">{navdisplay ? <LuUser className='link_icon'/>:null}{t("Profile")}</Link>
-            <Link onClick={() => {setNavDisplay(false);}} className='link' to="/cart">{navdisplay ? <BsFillCartCheckFill className='link_icon'/>:null}{t("Cart")}</Link>
+            {/* <Link onClick={() => {setNavDisplay(false);}} className='link' to="/cart">{navdisplay ? <BsFillCartCheckFill className='link_icon'/>:null}{t("Cart")}</Link> */}
             <Link onClick={() => {setNavDisplay(false);}} className='link' to="/wishlist">{navdisplay ? <FcLike className='link_icon'/>:null}{t("Wish list")}</Link>
             <Link className='link' to="/sign-in" onClick={handleLogOut}>{navdisplay ? <IoLogOutOutline className='link_icon'/>:null}{t("Log out")}</Link>
         </div>
@@ -83,7 +83,7 @@ const Navbar = () => {
                     <p style={{color:"#ff595e", fontWeight:"700"}}>{t("Log out")}</p>
                 </div>
             </div>
-            <Link to="/cart"><BsFillCartCheckFill className='icon cart'/></Link>
+            {/* <Link to="/cart"><BsFillCartCheckFill className='icon cart'/></Link> */}
             <Link  onMouseEnter={handleProfileShow} to="/profile"><CgProfile className = "icon profile" /></Link>
         </div>
         

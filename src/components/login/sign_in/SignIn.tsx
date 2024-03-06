@@ -4,6 +4,8 @@ import { Container } from './sing_in_style'
 import { Link } from 'react-router-dom'
 import { LoginContext } from '../../../context/loginContext'
 import axios from 'axios'
+import Modal from '../../../generics/Modal'
+import { LoadingContext } from '../../../context/loadingContext'
 type FormType = {
     email:string,
     password:string
@@ -12,17 +14,23 @@ function SignIn() {
     const navigate = useNavigate()
     const [form, setForm] = useState({} as FormType);
     const {setLogin} = useContext(LoginContext);
+    const [modal, setModal] = useState("none");
+    const {setLoading} = useContext(LoadingContext);
     const handleSubmit = async (e:any) => {
         e.preventDefault();
         try {
+            setLoading(true)
             console.log(form)
             const res = await axios.post("https://tashkent-server-3.onrender.com/sign-in", {...form});
             localStorage.setItem("auth", res.data);
             console.log(res);
             setLogin(true);
             navigate("/")
+            setLoading(false)
 
         } catch (error) {
+            setLoading(false);
+            setModal("flex");
             console.log("SIGNUP ERROR", error);
         }
     }
@@ -33,6 +41,11 @@ function SignIn() {
     }
   return (
     <Container >
+        <Modal width="300px" height='200px' display={modal} style={{}}>
+            <h1 style={{color:"red"}}>Error</h1>
+            <p style={{color:"orange"}}>Some error occured in the server</p>
+            <button onClick={() => setModal("none")} style={{width:"100px", height:"40px", background:"lightgreen", border:"none", borderRadius:"10px"}}>Confirm</button>
+        </Modal>
         <img className='logo' src='./logo.png' />
         <p className='welcome'>Discover the Flavors of Tashkent with Us!</p>
         <form className='form' onSubmit={handleSubmit}>
